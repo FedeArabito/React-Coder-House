@@ -5,6 +5,7 @@ nav{
   align-items: center;
   background-color: black;
   color: aliceblue;
+  padding: 0.5rem 2.5rem;
 }
 
 nav ul{
@@ -16,4 +17,17 @@ nav ul{
 nav ul li a{
   text-decoration: none;
   color: aliceblue;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo img{
+  
+  height: 50px;
+  width: 100%;
 }

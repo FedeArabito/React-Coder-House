@@ -1,12 +1,17 @@
-import React from 'react'
-import './NavBar.css'
+import React from 'react';
+import './NavBar.css';
+import logo from '../assets/DigiMart.png';
+import '../assets/DigiMart.png';
 import CartWidget from './CartWidget';
 
 const NavBar = () => {
   return (
     <nav>
-      <div className="logo">Hola</div>
-      <div className="buscador"></div>
+      <div className="logo">
+        <img src={logo} alt="" />
+        <div>DigiMart</div>
+      </div>
+      
       <ul>
         <li><a href="#" >Home</a></li>
         <li><a href="#" >Servicios</a></li>
@@ -14,10 +19,7 @@ const NavBar = () => {
         <li><a href="#" >Donde Estamos</a></li>
       </ul>
       <CartWidget/>
-      
     </nav>
-      
-    
   )
 }
 

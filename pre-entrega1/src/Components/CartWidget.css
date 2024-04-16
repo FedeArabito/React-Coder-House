@@ -1,0 +1,28 @@
+.cart{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.cart img{
+  background-color: white;
+  color: white;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.cart-counter{
+  background-color: white;
+  position: absolute;
+  top: -40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  left: 50%;
+  font-size: 15px;
+  background-color: black;
+  color: aliceblue;
+}
