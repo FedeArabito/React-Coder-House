@@ -12,17 +12,14 @@
 }
 
 .cart-counter{
-  background-color: white;
-  position: absolute;
-  top: -40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 22px;
-  width: 22px;
-  border-radius: 50%;
-  left: 50%;
-  font-size: 15px;
   background-color: black;
-  color: aliceblue;
+  display: block;
+  color: white;
+  padding: 3px;
+  font-size: 12px;
+  border-radius: 50%;
+  position: absolute;
+  top:70% ;
+  right: -15%;
+  bottom: 0;
 }

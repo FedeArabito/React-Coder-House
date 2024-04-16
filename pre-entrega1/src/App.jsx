@@ -8,9 +8,12 @@ function App() {
 
   return (
     <>
-      <NavBar/>
-      <ItemListContainer/>
+    <NavBar/>
+    <ItemListContainer greeting={"Bienvenidos a DigiMart"} parrafo={"Tienda Nro 1 en tecnologia"}/>
     </>
+
+    
+    
   )
 }
 
