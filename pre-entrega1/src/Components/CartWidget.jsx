@@ -2,7 +2,9 @@ import React from 'react'
 import './CartWidget.css'
 import cart from '../assets/cart.svg'
 
+
 const CartWidget = () => {
+
   return (
     <>
     <div className='cart'>

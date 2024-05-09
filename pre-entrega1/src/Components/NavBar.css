@@ -20,6 +20,9 @@ nav ul li a{
   color: aliceblue;
 }
 
+nav ul li .active{
+  border-bottom: 0.2rem solid aliceblue;
+}
 .logo{
   display: flex;
   justify-content: center;
