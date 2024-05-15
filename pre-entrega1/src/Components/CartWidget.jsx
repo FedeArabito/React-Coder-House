@@ -1,5 +1,5 @@
 import React from 'react'
-import './CartWidget.css'
+import '../Components/Estilos/CartWidget.css'
 import cart from '../assets/cart.svg'
 
 

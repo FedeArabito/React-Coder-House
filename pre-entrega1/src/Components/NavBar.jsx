@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './NavBar.css';
+import '../Components/Estilos/NavBar.css';
 import logo from '../assets/DigiMart.png';
 import '../assets/DigiMart.png';
 import CartWidget from './CartWidget';
@@ -17,9 +17,11 @@ const NavBar = () => {
       
       <ul>
         <li><a onClick={()=> setBorder("Home")} className= {border === "Home" ?  "active" :  ""} href="#" >Home</a></li>
-        <li><a onClick={()=> setBorder("Servicios")} className= {border === "Servicios" ?  "active" :  ""} href="#" >Servicios</a></li>
-        <li><a onClick={()=> setBorder("Nosotros")} className= {border === "Nosotros" ?  "active" :  ""} href="#" >Nosotros</a></li>
-        <li><a onClick={()=> setBorder("Donde Estamos")} className= {border === "Donde Estamos" ?  "active" :  ""} href="#" >Donde Estamos</a></li>
+        <li><a onClick={()=> setBorder("Nike")} className= {border === "Nike" ?  "active" :  ""} href="#" >Nike</a></li>
+        <li><a onClick={()=> setBorder("Adidas")} className= {border === "Adidas" ?  "active" :  ""} href="#" >Adidas</a></li>
+        <li><a onClick={()=> setBorder("New Balance")} className= {border === "New Balance" ?  "active" :  ""} href="#" >New Balance</a></li>
+        <li><a onClick={()=> setBorder("Topper")} className= {border === "Topper" ?  "active" :  ""} href="#" >Topper</a></li>
+        <li><a onClick={()=> setBorder("Puma")} className= {border === "Puma" ?  "active" :  ""} href="#" >Puma</a></li>
       </ul>
       <CartWidget/>
     </nav>

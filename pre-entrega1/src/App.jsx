@@ -1,8 +1,8 @@
 
 import './App.css'
-import NavBar from './Components/NavBar'
+import ItemDetailContainer from './Components/ItemDetailContainer'
 import ItemListContainer from './Components/ItemListContainer'
-
+import NavBar from './Components/NavBar'
 
 function App() {
   
@@ -10,9 +10,7 @@ function App() {
   return (
     <>
     <NavBar/>
-
-    <ItemListContainer greeting={"Bienvenidos a DigiMart"} parrafo={"Tienda Nro 1 en tecnologia"}/>
-    
+    <ItemListContainer greeting="Bienvenido a DigiMart" />
     </>
 
     
