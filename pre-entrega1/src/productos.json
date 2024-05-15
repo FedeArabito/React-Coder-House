@@ -12,7 +12,7 @@
     "id": 2,
     "title": "Air Jordan 1 Mid SE",
     "price": 60000,
-    "cateogry": "Nike",
+    "category": "Nike",
     "image": "../src/img/Air Jordan 1 Mid.webp",
     "stock": 20,
     "description": "Lorem mosamdoasdo"

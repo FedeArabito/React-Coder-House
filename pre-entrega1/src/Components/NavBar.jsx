@@ -3,25 +3,28 @@ import '../Components/Estilos/NavBar.css';
 import logo from '../assets/DigiMart.png';
 import '../assets/DigiMart.png';
 import CartWidget from './CartWidget';
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = () => {
 
-  const [border, setBorder] = useState("Home")
+  const [border, setBorder] = useState(null)
 
   return (
     <nav>
       <div className="logo">
-        <img src={logo} alt="" />
+        <Link to={"/"}>
+        <img onClick={()=> setBorder(null)} src={logo} alt="" />
+        </Link>
         <div>DigiMart</div>
       </div>
       
       <ul>
-        <li><a onClick={()=> setBorder("Home")} className= {border === "Home" ?  "active" :  ""} href="#" >Home</a></li>
-        <li><a onClick={()=> setBorder("Nike")} className= {border === "Nike" ?  "active" :  ""} href="#" >Nike</a></li>
-        <li><a onClick={()=> setBorder("Adidas")} className= {border === "Adidas" ?  "active" :  ""} href="#" >Adidas</a></li>
-        <li><a onClick={()=> setBorder("New Balance")} className= {border === "New Balance" ?  "active" :  ""} href="#" >New Balance</a></li>
-        <li><a onClick={()=> setBorder("Topper")} className= {border === "Topper" ?  "active" :  ""} href="#" >Topper</a></li>
-        <li><a onClick={()=> setBorder("Puma")} className= {border === "Puma" ?  "active" :  ""} href="#" >Puma</a></li>
+        <li><NavLink onClick={()=> setBorder("Nike")} className= {border === "Nike" ?  "active" :  ""} to={"/category/Nike"} >Nike</NavLink></li>
+        <li><NavLink onClick={()=> setBorder("Adidas")} className= {border === "Adidas" ?  "active" :  ""} to={"/category/Adidas"} >Adidas</NavLink></li>
+        <li><NavLink onClick={()=> setBorder("New Balance")} className= {border === "New Balance" ?  "active" :  ""} to={"/category/New Balance"}>New Balance</NavLink></li>
+        <li><NavLink onClick={()=> setBorder("Topper")} className= {border === "Topper" ?  "active" :  ""} to={"/category/Topper"} >Topper</NavLink></li>
+        <li><NavLink onClick={()=> setBorder("Puma")} className= {border === "Puma" ?  "active" :  ""} to={"/category/Puma"}>Puma</NavLink></li>
+        <li><NavLink onClick={()=> setBorder("Vans")} className= {border === "Vans" ?  "active" :  ""} to={"/category/Vans"}>Vans</NavLink></li>
       </ul>
       <CartWidget/>
     </nav>

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import arrayProductos from "../productos.json"
 import ItemDetail from './ItemDetail';
+import { useParams } from 'react-router-dom';
 
 const fetchItems = ()=>{
   return new Promise((resolve)=>{
     setTimeout(()=>{
-      const product = arrayProductos.find(item => item.id === 2);
-      resolve(product)
-    }, 2000)
+      resolve(arrayProductos)
+      console.log(arrayProductos);
+    }, 700)
   })
 };
 
@@ -15,16 +16,17 @@ const ItemDetailContainer = () => {
 
 
   const [product, setProduct] = useState({});
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
+  const {id} = useParams();
   
   useEffect(() => {
     const getApi = async ()=>{
       const data = await fetchItems()
-      setProduct(data)
+      setProduct(id ? data.find(item => item.id === id) : data)
       setLoading(false)
     }
     getApi();
-  }, []);
+  }, [id]);
 
   return (
     <div>

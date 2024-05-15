@@ -1,17 +1,12 @@
 import React, { useState } from 'react'
 import '../Components/Estilos/Item.css'
-import cart from '../assets/cart.svg'
+import { Link } from 'react-router-dom'
 
 const Item = ({id, title, image, category, price, }) => {
   
-  const [showDetail, setDetail] = useState(false);
-
-  const toggleDetail = ()=>{
-    setDetail(!showDetail)
-  }
-  
   return (
     <div className='item-card'>
+      <Link to={"/item/" + id}>
       <div className="item-title">
         <h2>{title}</h2>
       </div>
@@ -20,22 +15,8 @@ const Item = ({id, title, image, category, price, }) => {
       </div>
       <div className="item-info">
         <p>${price}</p>
-        <img src={cart} alt="Carrito" />
       </div>
-      <div className="item-ver-detalle">
-        <a onClick={toggleDetail}>
-          {showDetail ? '' : 'Ver Detalle'}
-          </a>
-          {showDetail &&(
-            <>
-            <div className="overlay" onClick={toggleDetail}></div>
-            <div className="item-details show-details">
-              <span className="close-button" onClick={toggleDetail}>X</span>
-              <p>{description}</p>
-            </div>
-          </>
-          )}
-      </div>
+      </Link>
     </div>
   )
 }

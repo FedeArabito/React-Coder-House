@@ -25,22 +25,10 @@
   border-radius: 8px;
 }
 
-.item-info{
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-}
 
-.item-info img{
-  width: 100%;
-  height: 18px;
-  cursor: pointer;
-}
 
 .item-info p {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  
   margin-bottom: 5px;
 }
 

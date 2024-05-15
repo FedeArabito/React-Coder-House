@@ -2,15 +2,14 @@ import React, { useEffect, useState } from 'react'
 import '../Components/Estilos/ItemListContainer.css'
 import ItemList from './ItemList';
 import arrayProductos from "../productos.json"
-import ItemDetailContainer from './ItemDetailContainer';
+import { useParams } from 'react-router-dom';
 
 
 const fetchItems = ()=>{
   return new Promise((resolve)=>{
     setTimeout(()=>{
       resolve(arrayProductos)
-      console.log(arrayProductos);
-    }, 2000)
+    }, 500)
   })
 };
 
@@ -18,15 +17,19 @@ const ItemListContainer = ({ greeting}) => {
 
 
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
+
+  const {id} = useParams();
+
+
   useEffect(() => {
     const getApi = async ()=>{
-      const data = await fetchItems()
-      setProducts(data)
+      const data = await fetchItems(id)
+      setProducts(id ? data.filter(item => item.category === id) : data)
       setLoading(false)
     }
     getApi();
-  }, []);
+  }, [id]);
 
   return (
     <section className='hero'>
@@ -35,11 +38,10 @@ const ItemListContainer = ({ greeting}) => {
         <p>{loading
           ? <div>Cargando...</div>
           : 
-        <ItemList category={"all"} products={products} />
+        <ItemList  products={products} />
       }</p>
       
       </div>
-      <ItemDetailContainer/>
     </section>
 
 
