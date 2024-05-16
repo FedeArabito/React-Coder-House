@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+
 import '../Components/Estilos/Item.css'
 import { Link } from 'react-router-dom'
 
@@ -7,6 +7,7 @@ const Item = ({id, title, image, category, price, }) => {
   return (
     <div className='item-card'>
       <Link to={"/item/" + id}>
+      
       <div className="item-title">
         <h2>{title}</h2>
       </div>

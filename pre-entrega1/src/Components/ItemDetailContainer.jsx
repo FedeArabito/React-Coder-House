@@ -3,38 +3,38 @@ import arrayProductos from "../productos.json"
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
 
-const fetchItems = ()=>{
-  return new Promise((resolve)=>{
-    setTimeout(()=>{
-      resolve(arrayProductos)
-      console.log(arrayProductos);
-    }, 700)
+const fetchItems = () => {
+  return new Promise((resolve) => {
+      setTimeout(() => {
+          resolve(arrayProductos);
+      }, 2000)
   })
 };
 
 const ItemDetailContainer = () => {
-
-
-  const [product, setProduct] = useState({});
+  const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
   const {id} = useParams();
-  
+
   useEffect(() => {
-    const getApi = async ()=>{
-      const data = await fetchItems()
-      setProduct(id ? data.find(item => item.id === id) : data)
-      setLoading(false)
-    }
-    getApi();
+      const fetchData = async () => {
+          const data = await fetchItems();
+          setItem (id ? data.find(item => item.id == id) : {});
+          setLoading (false);
+      };
+
+      fetchData();
   }, [id]);
+
+
 
   return (
     <div>
-
+      
       {loading
           ? <div>Cargando...</div>
           : 
-        <ItemDetail  product={product} />
+      <ItemDetail item= {item}/>
       }
       
     </div>
