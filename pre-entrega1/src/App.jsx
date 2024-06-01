@@ -5,8 +5,8 @@ import ItemListContainer from './Components/ItemListContainer'
 import NavBar from './Components/NavBar'
 import ItemDetailContainer from './Components/ItemDetailContainer'
 import Error404 from './Components/Error404'
-import CartView from './Components/CartView'
 import CartContextProvider from './Components/CartContext'
+import Cart from './Components/Cart'
 
 function App() {
   
@@ -19,7 +19,7 @@ function App() {
     <Route exact path={"/"} element={<ItemListContainer greeting="Bienvenido a DigiMart" />}/>
     <Route exact path={"/category/:categoryId"} element={<ItemListContainer/>}/>
     <Route exact path={"/item/:id"} element={<ItemDetailContainer/>}/>
-    
+    <Route exact path={"/cart"} element={<Cart/>}/>
     <Route exact path={"*"} element={<Error404/>}/>
     </Routes>
     </BrowserRouter>
