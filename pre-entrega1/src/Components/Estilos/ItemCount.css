@@ -1,0 +1,14 @@
+.agregar-btn{
+  margin-top: 20px;
+}
+.agregar-btn > p{
+  background: #00988c;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.counter-btn{
+  display: flex;
+  align-items: center;
+  
+}

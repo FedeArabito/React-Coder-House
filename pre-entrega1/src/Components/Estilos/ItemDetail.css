@@ -1,3 +1,7 @@
+a{
+  text-decoration: none;
+}
+
 .item-detail {
   display: flex;
   border: 1px solid #ccc;
