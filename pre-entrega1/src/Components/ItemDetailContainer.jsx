@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import arrayProductos from "../productos.json"
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../main';
 
-const fetchItems = () => {
-  return new Promise((resolve) => {
-      setTimeout(() => {
-          resolve(arrayProductos);
-      }, 2000)
-  })
-};
+
+
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
@@ -17,13 +13,16 @@ const ItemDetailContainer = () => {
   const {id} = useParams();
 
   useEffect(() => {
-      const fetchData = async () => {
-          const data = await fetchItems();
-          setItem (id ? data.find(item => item.id == id) : {});
-          setLoading (false);
-      };
+   
+    const docRef = doc(db, "productosEcommerce", id)
+    getDoc(docRef)
+    .then((resp)=>{
+      setItem({
+        ...resp.data(), id: resp.id
+      })
+      setLoading(false)
+    })
 
-      fetchData();
   }, [id]);
 
 

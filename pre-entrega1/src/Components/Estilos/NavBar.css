@@ -27,8 +27,13 @@ nav ul li .active{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
   gap: 0.5rem;
   cursor: pointer;
+}
+
+.logo-name{
+  font-size: small;
 }
 
 .logo img{

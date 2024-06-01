@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import '../Components/Estilos/ItemListContainer.css'
 import ItemList from './ItemList';
-import arrayProductos from "../productos.json"
 import { useParams } from 'react-router-dom';
+import { collection, getDocs,query, where } from 'firebase/firestore';
+import {db} from "../main"
 
 
-const fetchItems = ()=>{
-  return new Promise((resolve)=>{
-    setTimeout(()=>{
-      resolve(arrayProductos)
-    }, 500)
-  })
-};
 
 const ItemListContainer = ({ greeting}) => {
 
@@ -19,27 +13,38 @@ const ItemListContainer = ({ greeting}) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const {id} = useParams();
+  const {categoryId} = useParams();
 
 
   useEffect(() => {
-    const getApi = async ()=>{
-      const data = await fetchItems(id)
-      setProducts(id ? data.filter(item => item.category === id) : data)
+    const productosEcommerce = collection(db, "productosEcommerce")
+    
+    const q = categoryId ? query(productosEcommerce, where("category", "==", categoryId)) : productosEcommerce
+
+
+    getDocs(q)
+    .then((resp) =>{
+      setProducts(
+        resp.docs.map((doc)=>{
+          return {...doc.data(), id: doc.id}
+        })
+      )
       setLoading(false)
-    }
-    getApi();
-  }, [id]);
+    })
+
+  }, [categoryId]);
+
+  
 
   return (
     <section className='hero'>
       <div className='container'>
         <h1>{greeting}</h1>
-        <p>{loading
+        {loading
           ? <div>Cargando...</div>
           : 
         <ItemList  products={products} />
-      }</p>
+      }
       
       </div>
     </section>

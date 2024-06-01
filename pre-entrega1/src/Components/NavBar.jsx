@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../Components/Estilos/NavBar.css';
-import logo from '../assets/DigiMart.png';
-import '../assets/DigiMart.png';
+import logo from '../assets/logo.jpg';
+import '../assets/logo.jpg';
 import CartWidget from './CartWidget';
 import { Link, NavLink } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ const NavBar = () => {
         <Link to={"/"}>
         <img onClick={()=> setBorder(null)} src={logo} alt="" />
         </Link>
-        <div>DigiMart</div>
+       
       </div>
       
       <ul>
