@@ -7,7 +7,7 @@ import '../Components/Estilos/ItemDetailContainer.css'
 
 
 
-
+  
 
 const ItemDetailContainer = () => {
 
