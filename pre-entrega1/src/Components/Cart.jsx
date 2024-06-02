@@ -10,7 +10,7 @@ const Cart = () => {
 
   if (totalProducst()== 0) {
     return (
-      <div>
+      <div className='msj-carrito-vacio'>
         <h4>Tu carrito esta vacio!</h4>
         <Link to={"/"}> Volver a la pagina principal</Link>
       </div>
@@ -37,7 +37,9 @@ const Cart = () => {
       </div>
       <div className="cart-total">
         <h3>Total a pagar: ${totalPagar()}</h3>
+        <Link to={"/checkout"}><h4>Finalizar Compra</h4></Link>
       </div>
+    
     </div>
   )
 }

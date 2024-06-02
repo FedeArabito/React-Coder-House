@@ -37,7 +37,7 @@ a{
   margin-bottom: 5px;
 }
 
-/* Hover effect */
+
 .item-card:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
@@ -60,7 +60,7 @@ a{
   opacity: 1;
 }
 
-/* Estilo para el div de detalles del ítem */
+
 .item-details{
   position: fixed;
   top: 50%;
@@ -69,7 +69,7 @@ a{
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 8px;
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  z-index: 1000; 
   width: 100%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
@@ -78,7 +78,7 @@ a{
   color: black;
   font-size: 12px;
 }
-/* Estilo para el botón de cerrar */
+
 .close-button {
   position: absolute;
   top: 10px;
@@ -87,24 +87,24 @@ a{
   font-size: 18px;
 }
 
-/* Estilo para difuminar el fondo */
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Color de fondo semi-transparente */
-  z-index: 999; /* Asegura que esté por encima de otros elementos, pero detrás de item-details */
-  display: none; /* Oculto inicialmente */
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 999; 
+  display: none;
 }
 
-/* Mostrar overlay y item-details cuando se muestra el detalle del ítem */
+
  .item-details.show-details {
   display: block;
 }
 
-/* Estilo para difuminar el fondo cuando se muestra el detalle */
+
  .item-details.show-details + .overlay {
   display: block;
 } 

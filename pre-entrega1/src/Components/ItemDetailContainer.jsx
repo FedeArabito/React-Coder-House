@@ -3,17 +3,22 @@ import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../main';
+import '../Components/Estilos/ItemDetailContainer.css'
+
 
 
 
 
 const ItemDetailContainer = () => {
+
+
+
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
   const {id} = useParams();
 
   useEffect(() => {
-   
+
     const docRef = doc(db, "productosEcommerce", id)
     getDoc(docRef)
     .then((resp)=>{
@@ -31,7 +36,8 @@ const ItemDetailContainer = () => {
     <div>
       
       {loading
-          ? <div>Cargando...</div>
+          ? <div className='carga'>...Cargando</div>
+        
           : 
       <ItemDetail item= {item} />
       }

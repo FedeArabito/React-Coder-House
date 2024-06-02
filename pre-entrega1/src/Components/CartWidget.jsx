@@ -14,7 +14,7 @@ const CartWidget = () => {
     {totalProducst() > 0
     ?
     <Link to={"/cart"}>
-    <div className='cart'>
+    <div className='carrito'>
       <img src={cart} alt="Imagen Carrito" srcset="" />
       <span className='cart-counter'>{totalProducst()}</span>
     </div>

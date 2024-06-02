@@ -7,6 +7,7 @@ import {db} from "../main"
 
 
 
+
 const ItemListContainer = ({ greeting}) => {
 
 
@@ -41,7 +42,7 @@ const ItemListContainer = ({ greeting}) => {
       <div className='container'>
         <h1>{greeting}</h1>
         {loading
-          ? <div>Cargando...</div>
+          ? <div className='carga'>...Cargando</div>
           : 
         <ItemList  products={products} />
       }

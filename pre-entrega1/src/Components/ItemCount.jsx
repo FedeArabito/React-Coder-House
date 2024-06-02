@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "../Components/Estilos/ItemCount.css"
+import "./Estilos/ItemCount.css"
 import { Link } from 'react-router-dom';
 
 const ItemCount = ({ stock, onAdd }) => {
@@ -42,7 +42,7 @@ const ItemCount = ({ stock, onAdd }) => {
           visible ? (
             <p onClick={agregarCarrito} >Agregar al carrito</p>
           ) : (
-            <Link to={"/cart"}><p>Terminar compra</p></Link>
+            <Link to={"/cart"}><p className='end-shop-btn'>Terminar compra</p></Link>
           )
         ) : (
           <p>Sin stock</p>

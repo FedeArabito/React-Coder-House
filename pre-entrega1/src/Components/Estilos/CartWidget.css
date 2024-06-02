@@ -1,13 +1,14 @@
-.cart{
+.carrito{
   display: flex;
   align-items: center;
   cursor: pointer;
   position: relative;
+  padding: 0;
 }
-.cart img{
+.carrito img{
   background-color: white;
   color: white;
-  padding: 5px;
+  padding: 10px;
   border-radius: 50%;
 }
 

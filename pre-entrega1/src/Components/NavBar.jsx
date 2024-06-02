@@ -13,9 +13,8 @@ const NavBar = () => {
     <nav>
       <div className="logo">
         <Link to={"/"}>
-        <img onClick={()=> setBorder(null)} src={logo} alt="" />
+        <img onClick={()=> setBorder(null)}src={logo} alt="" />
         </Link>
-       
       </div>
       
       <ul>
